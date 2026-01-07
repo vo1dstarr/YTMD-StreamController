@@ -1,5 +1,5 @@
-# PluginTemplate
+# YTMD-StreamController
 
-A simple plugin you can use as a starting point for your amazing creations!
+A plugin for [StreamController](https://github.com/StreamController/StreamController) for controlling the [YouTube Music Desktop App](https://github.com/ytmdesktop/ytmdesktop).
 
-For more information checkout [the docs](https://streamcontroller.github.io/docs/latest/).
+Inspired by but not affiliated with [YTMD-StreamDeck](https://github.com/XeroxDev/YTMD-StreamDeck).
