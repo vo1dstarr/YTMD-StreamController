@@ -31,7 +31,7 @@ class YTMDPlugin(PluginBase):
         self.play_pause_holder = ActionHolder(
             plugin_base=self,
             action_base=PlayPause,
-            action_id="dev.vo1dstarr.ytmd::PlayPause",
+            action_id="dev_vo1dstarr_ytmd::PlayPause",
             action_name="Play/Pause",
         )
         self.add_action_holder(self.play_pause_holder)
@@ -39,7 +39,7 @@ class YTMDPlugin(PluginBase):
         self.next_track_holder = ActionHolder(
             plugin_base=self,
             action_base=NextTrack,
-            action_id="dev.vo1dstarr.ytmd::NextTrack",
+            action_id="dev_vo1dstarr_ytmd::NextTrack",
             action_name="Next Track",
         )
         self.add_action_holder(self.next_track_holder)
@@ -47,7 +47,7 @@ class YTMDPlugin(PluginBase):
         self.set_volume_holder = ActionHolder(
             plugin_base=self,
             action_base=SetVolume,
-            action_id="dev.vo1dstarr.ytmd::SetVolume",
+            action_id="dev_vo1dstarr_ytmd::SetVolume",
             action_name="Set Volume",
         )
         self.add_action_holder(self.set_volume_holder)
@@ -55,7 +55,7 @@ class YTMDPlugin(PluginBase):
         self.shuffle_holder = ActionHolder(
             plugin_base=self,
             action_base=Shuffle,
-            action_id="dev.vo1dstarr.ytmd::Shuffle",
+            action_id="dev_vo1dstarr_ytmd::Shuffle",
             action_name="Shuffle",
         )
         self.add_action_holder(self.shuffle_holder)
@@ -63,7 +63,7 @@ class YTMDPlugin(PluginBase):
         self.repeat_holder = ActionHolder(
             plugin_base=self,
             action_base=Repeat,
-            action_id="dev.vo1dstarr.ytmd::Repeat",
+            action_id="dev_vo1dstarr_ytmd::Repeat",
             action_name="Repeat",
         )
         self.add_action_holder(self.repeat_holder)
