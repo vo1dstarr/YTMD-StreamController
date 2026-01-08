@@ -33,6 +33,11 @@ class YTMDPlugin(PluginBase):
             action_base=PlayPause,
             action_id="dev_vo1dstarr_ytmd::PlayPause",
             action_name="Play/Pause",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNTESTED,
+                Input.Touchscreen: ActionInputSupport.UNTESTED,
+            },
         )
         self.add_action_holder(self.play_pause_holder)
 
@@ -41,6 +46,11 @@ class YTMDPlugin(PluginBase):
             action_base=NextTrack,
             action_id="dev_vo1dstarr_ytmd::NextTrack",
             action_name="Next Track",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNTESTED,
+                Input.Touchscreen: ActionInputSupport.UNTESTED,
+            },
         )
         self.add_action_holder(self.next_track_holder)
 
@@ -49,6 +59,11 @@ class YTMDPlugin(PluginBase):
             action_base=SetVolume,
             action_id="dev_vo1dstarr_ytmd::SetVolume",
             action_name="Set Volume",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNTESTED,
+                Input.Touchscreen: ActionInputSupport.UNTESTED,
+            },
         )
         self.add_action_holder(self.set_volume_holder)
 
@@ -57,6 +72,11 @@ class YTMDPlugin(PluginBase):
             action_base=Shuffle,
             action_id="dev_vo1dstarr_ytmd::Shuffle",
             action_name="Shuffle",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNTESTED,
+                Input.Touchscreen: ActionInputSupport.UNTESTED,
+            },
         )
         self.add_action_holder(self.shuffle_holder)
 
@@ -65,6 +85,11 @@ class YTMDPlugin(PluginBase):
             action_base=Repeat,
             action_id="dev_vo1dstarr_ytmd::Repeat",
             action_name="Repeat",
+            action_support={
+                Input.Key: ActionInputSupport.SUPPORTED,
+                Input.Dial: ActionInputSupport.UNTESTED,
+                Input.Touchscreen: ActionInputSupport.UNTESTED,
+            },
         )
         self.add_action_holder(self.repeat_holder)
 
