@@ -1,6 +1,7 @@
 {
-    "version": "",
-    "thumbnail": "",
-    "id": "",
-    "name": ""
+    "name": "YTMD Controller",
+    "id": "dev.vo1dstarr.ytmd",
+    "version": "1.0.0",
+    "app-version": "1.5.0",
+    "thumbnail": "assets/ytmd.png"
 }

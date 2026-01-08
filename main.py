@@ -2,26 +2,80 @@
 from src.backend.PluginManager.PluginBase import PluginBase
 from src.backend.PluginManager.ActionHolder import ActionHolder
 
-# Import actions
-from .actions.SimpleAction.SimpleAction import SimpleAction
+# Import plugin components
+from .backend import YTMDBackend
+from .settings import PluginSettings
 
-class PluginTemplate(PluginBase):
+# Import actions
+from .actions.PlayPause.PlayPause import PlayPause
+from .actions.NextTrack.NextTrack import NextTrack
+from .actions.SetVolume.SetVolume import SetVolume
+from .actions.Shuffle.Shuffle import Shuffle
+from .actions.Repeat.Repeat import Repeat
+
+
+class YTMDPlugin(PluginBase):
     def __init__(self):
         super().__init__()
 
-        ## Register actions
-        self.simple_action_holder = ActionHolder(
-            plugin_base = self,
-            action_base = SimpleAction,
-            action_id = "dev_vo1dstarr_YTMD-StreamController::SimpleAction", # Change this to your own plugin id
-            action_name = "Simple Action",
+        # Enable plugin settings
+        self.has_plugin_settings = True
+
+        # Initialize backend
+        self.backend = YTMDBackend(self)
+
+        # Initialize settings manager
+        self._settings_manager = PluginSettings(self)
+
+        # Register actions
+        self.play_pause_holder = ActionHolder(
+            plugin_base=self,
+            action_base=PlayPause,
+            action_id="dev.vo1dstarr.ytmd::PlayPause",
+            action_name="Play/Pause",
         )
-        self.add_action_holder(self.simple_action_holder)
+        self.add_action_holder(self.play_pause_holder)
+
+        self.next_track_holder = ActionHolder(
+            plugin_base=self,
+            action_base=NextTrack,
+            action_id="dev.vo1dstarr.ytmd::NextTrack",
+            action_name="Next Track",
+        )
+        self.add_action_holder(self.next_track_holder)
+
+        self.set_volume_holder = ActionHolder(
+            plugin_base=self,
+            action_base=SetVolume,
+            action_id="dev.vo1dstarr.ytmd::SetVolume",
+            action_name="Set Volume",
+        )
+        self.add_action_holder(self.set_volume_holder)
+
+        self.shuffle_holder = ActionHolder(
+            plugin_base=self,
+            action_base=Shuffle,
+            action_id="dev.vo1dstarr.ytmd::Shuffle",
+            action_name="Shuffle",
+        )
+        self.add_action_holder(self.shuffle_holder)
+
+        self.repeat_holder = ActionHolder(
+            plugin_base=self,
+            action_base=Repeat,
+            action_id="dev.vo1dstarr.ytmd::Repeat",
+            action_name="Repeat",
+        )
+        self.add_action_holder(self.repeat_holder)
 
         # Register plugin
         self.register(
-            plugin_name = "YTMD-StreamController",
-            github_repo = "https://github.com/vo1dstarr/YTMD-StreamController",
-            plugin_version = "0.0.1",
-            app_version = "1.1.1-alpha"
+            plugin_name="YTMD Controller",
+            github_repo="https://github.com/vo1dstarr/YTMD-StreamController",
+            plugin_version="1.0.0",
+            app_version="1.5.0"
         )
+
+    def get_settings_area(self):
+        """Return the plugin settings UI."""
+        return self._settings_manager.get_settings_area()
